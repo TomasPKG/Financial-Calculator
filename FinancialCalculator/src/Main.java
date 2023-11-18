@@ -11,9 +11,19 @@ public class Main {
 		timeValueMoney PresentValue = new timeValueMoney(10, 10, 0, 0, 25000);
 		PresentValue.ComputePresentValue();
 		System.out.println("Interest Conversion Test:");
-		
+		interestConversion EffectiveRate = new interestConversion(5, 0, 12);
+		EffectiveRate.ComputeEffectiveRate();
+		interestConversion NominalRate = new interestConversion(0, 5.5, 12);
+		NominalRate.ComputeAnnualRate();
 		System.out.println("Investment Criteria Test:");
-		
+		investmentCriteria InvestmentDecision = new investmentCriteria(-50000, 12);
+		InvestmentDecision.addCashFlow(30000);
+		InvestmentDecision.addCashFlow(20000);
+		InvestmentDecision.addCashFlow(10000);
+		InvestmentDecision.addCashFlow(10000);
+		InvestmentDecision.addCashFlow(10000);
+		System.out.println(InvestmentDecision.computeNetPresentValue());
+		System.out.println(InvestmentDecision.computeInternalRateReturn());
 		System.out.println("Mortages Test:");
 		
 		System.out.println("Bonds Test:");
